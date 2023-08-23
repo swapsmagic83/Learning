@@ -1,7 +1,7 @@
 class Vehicle {
     constructor(make,model,year){
         if(typeof make !== 'string' || typeof model !== 'string' || !Number.isFinite(year)){
-            return 'Only vehicles are allowed in here'
+           throw new Error('Invalid Info')
         }
         this.make=make
         this.model=model
@@ -39,6 +39,9 @@ class Garage{
         this.capacity= capacity
     }
     add(newVehicle){
+        if(typeof newVehicle !== Vehicle){
+            return 'Only vehicles are allowed'
+        }
         if(this.vehicles.length>=this.capacity){
             return 'Sorry, We are FULL!!!'
         }else{
