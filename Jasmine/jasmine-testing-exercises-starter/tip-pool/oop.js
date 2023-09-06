@@ -131,6 +131,7 @@ const cat={
         }
     },
     greet(){
+        console.log("This is: ", this)
         alert(`${this.name} says HELLOO`)
     }
 }
@@ -165,6 +166,11 @@ function applySalesTax(taxRate, price){
 const caliTax = applySalesTax.bind('null',0.0725)
 const txTax= applySalesTax.bind('null',0.0225)
 
+// function doMath(number, x){
+//     return number * x
+// }
+// const calculation1= doMath.bind(null,20)
+// const calculation2=doMath.bind(null,30)
 const bobsMembership={
     name:'Bob',
     total: 250,
@@ -182,6 +188,8 @@ function collectMonthlyFee(fee){
 const collectBobFee = collectMonthlyFee.bind(bobsMembership,5)
 const collectJillFee=collectMonthlyFee.bind(jillsMembership,50)
 
+
+
 const btn= document.querySelector('#btn')
 btn.addEventListener('click',cat.greet.bind(cat))
 const btnA= document.querySelector('#a')
@@ -189,9 +197,11 @@ const btnB= document.querySelector('#b')
 const btnC= document.querySelector('#c')
 
 function popUp(msg){
-    alert('Secret message is '+ msg)
+    console.log(this)
+    alert('Secret message is ' + msg)
 }
-btnA.addEventListener('click', popUp.bind(null, 'Button A says HIII'))
+
+btnA.addEventListener('click', popUp.bind(null,'Button A says HIII'))
 btnB.addEventListener('click', popUp.bind(null, 'Button B says HIII'))
 btnC.addEventListener('click', popUp.bind(null, 'Button C says HIII'))
 
@@ -214,3 +224,26 @@ function sqArea(){
 let evenSquare= new Square(2,2,2,2)
 console.log(evenSquare.getArea)
    
+let myObj = {
+    name1: 'myObj',
+    type: "object",
+    print: function() {
+        console.log(`Hello: ${this.name1}`)
+        return "Hello"
+    }
+}
+
+var func1 = myObj.print
+
+const greeter = {
+    msg: "Greeter",
+    sayHi: () => {
+        alert(this.msg)
+    },
+    waitAndGreet: function(delay) {
+        setTimeout(() => {
+            console.log(this)
+            alert("HIIII!")
+        }, delay)
+    }
+}
