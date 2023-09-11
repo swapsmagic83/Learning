@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+</head>
+<body>
+   
+     <!-- <div class="main-container"> 
+          <h1>Movies App!!</h1> 
+    <form action="" class="form-container">
+         <div class="input-container">
+           <label>Title  
+        <input class="input" type="text"  min="2"></label>
+        <label>Rating
+        <input class="input" type="number"  min="0" max="10"></label>
+        <button class="input">Remove</button><br> 
+         </div>
+         <button type="submit"> SUBMIT HERE </button> 
+    </form>
+    
+    </div>  -->
+    <!-- <div class="list-container">
+        <ul class="lists">
+            <li></li>
+        </ul>
+    </div> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+   <script>
+
+  
+   $('body').append('<div class="main-container"></div>')
+   $('.main-container').append('<h1>Movies App!!</h1>')
+   $('.main-container').append('<form class="form-container"></form>')
+   $('.form-container').append('<div class="input-container"></div>')
+   $('.form-container').append('<button type="submit" class="submit"> Submit Here</button>')
+   $('.input-container').append('<label>Title</label>').append('<input class="title-input" typer="text">')
+   $('.input-container').append('<label>Rating</label>').append('<input class="rating-input" type="number">')
+//    $('.input-container').append('<button class="input" > Remove </button>')
+   $('body').append('<div class="list-container"></div>')
+   $('.list-container').append('<ul class="lists"></ul>')
+   $('.lists').append('<li></li>')
+   $('submit').on('click',function(){
+   
+    let title=$('.title-input').val()
+    let rating=$('.rating-input').val()
+    $('<li></li>').html('title')
+})
+// $('.lists').append('<li></li>')
+// $('.list-container').append('<ul class="lists"></ul>')
+// $('body').append('<div class="list-container"></div>')
+   </script>
+</body>
+</html>
