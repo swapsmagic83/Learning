@@ -33,24 +33,16 @@
   
    $('body').append('<div class="main-container"></div>')
    $('.main-container').append('<h1>Movies App!!</h1>')
-   $('.main-container').append('<form class="form-container"></form>')
+   $('.main-container').append('<form class="form-container" name="abc"></form>')
    $('.form-container').append('<div class="input-container"></div>')
    $('.form-container').append('<button type="submit" class="submit"> Submit Here</button>')
-   $('.input-container').append('<label>Title</label>').append('<input class="title-input" typer="text">')
-   $('.input-container').append('<label>Rating</label>').append('<input class="rating-input" type="number">')
-//    $('.input-container').append('<button class="input" > Remove </button>')
+   $('.input-container').append('<label>Title</label>').append('<input class="title-input" name="title"/>')
+   $('.input-container').append('<label>Rating</label>').append('<input class="rating-input" type="number"/>')
+
    $('body').append('<div class="list-container"></div>')
    $('.list-container').append('<ul class="lists"></ul>')
-   $('.lists').append('<li></li>')
-   $('submit').on('click',function(){
-   
-    let title=$('.title-input').val()
-    let rating=$('.rating-input').val()
-    $('<li></li>').html('title')
-})
-// $('.lists').append('<li></li>')
-// $('.list-container').append('<ul class="lists"></ul>')
-// $('body').append('<div class="list-container"></div>')
+
    </script>
+   <script src="jQuery.js"></script>
 </body>
 </html>
